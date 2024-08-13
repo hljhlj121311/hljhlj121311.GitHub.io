@@ -106,16 +106,22 @@
     <div class="container">
         <div class="content-wrapper">
             <div class="content">
-                <h1>©The Sound Of Freedom homepage</h1>
-                <p>隶属于[link:自由与多元化促进会（FDO）𖤓](https://fdo-page.github.io/startpage/)</p>
-                <p>\n这是一个自由与多元化促进会的去中心化个人主网站，依据[link:《自由与多元化促进会条例》](https://fdo-page.github.io/tiaoli/)相关条目构建。本网站的主要议题为政治、教育、与十二班班内相关事务。你可以向guangyinzhong@outlook.com投稿或是独立制作文章页面。我的宗旨是创建一个开放多元的平台，进行信息的传播。以下是最新的文章。\n\n还在写作中…… </p>
+                <h1>十二班通讯社文库</h1>
+                <p>隶属于[link:自由与多元化促进会（FDO）𖤓](https://fdo-page.github.io/startpage/)和<a href="https://hljhlj121311.github.io/daidai.GitHub.io/">十二班通讯社</a></p>
+                <p>\n本网站的主要议题为政治、教育、与十二班班内相关事务。你可以向guangyinzhong@outlook.com和qhljhlj@gmail.com投稿或是独立制作文章页面。
+                    <p></p>
+                <p>目录</p>
+                <p></p>
+            <ul>
+                <p><a href="https://hljhlj121311.github.io/">呆呆团民主制条例</a></p>
+            </ul>
             </div>
         </div>
     </div>
 
     <script>
         function processLinks() {
-    const content = document.querySelector('.content');
+    const content = documentary.querySelector('.content');
     content.innerHTML = content.innerHTML.replace(/\[link:(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank">$1</a>');
 }
         

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FDO-startpage</title>
+    <style>
+        :root {
+            --bg-gradient: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
+            --text-color: #333;
+            --bg-color: rgba(255, 255, 255, 0.2);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text-color: #f0f0f0;
+                --bg-color: rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            color: var(--text-color);
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-gradient);
+            z-index: -1;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+
+        .content-wrapper {
+            width: 100%;
+            max-width: 800px;
+            max-height: calc(100vh - 40px);
+            overflow-y: auto;
+            background: var(--bg-color);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                justify-content: flex-start;
+                padding-left: calc((100% - 65%) * 0.382);
+            }
+            .content-wrapper {
+                width: 65%;
+            }
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            border-bottom: 1px dashed currentColor;
+        }
+
+        a:hover {
+            border-bottom-style: solid;
+        }
+
+        /* 添加滚动条样式 */
+        .content-wrapper::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .content-wrapper::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .content-wrapper::-webkit-scrollbar-thumb {
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+        }
+
+        .content-wrapper::-webkit-scrollbar-thumb:hover {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="container">
+        <div class="content-wrapper">
+            <div class="content">
+                <h1>©The Sound Of Freedom homepage</h1>
+                <p>隶属于[link:自由与多元化促进会（FDO）𖤓](https://fdo-page.github.io/startpage/)</p>
+                <p>\n这是一个自由与多元化促进会的去中心化个人主网站，依据[link:《自由与多元化促进会条例》](https://fdo-page.github.io/tiaoli/)相关条目构建。本网站的主要议题为政治、教育、与十二班班内相关事务。你可以向guangyinzhong@outlook.com投稿或是独立制作文章页面。我的宗旨是创建一个开放多元的平台，进行信息的传播。以下是最新的文章。\n\n还在写作中…… </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function processLinks() {
+    const content = document.querySelector('.content');
+    content.innerHTML = content.innerHTML.replace(/\[link:(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank">$1</a>');
+}
+        
+        function processLineBreaks() {
+            const content = document.querySelector('.content');
+            content.innerHTML = content.innerHTML.replace(/\\n/g, '<br>');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            processLinks();
+            processLineBreaks();
+        });
+    </script>
+</body>
+</html>
